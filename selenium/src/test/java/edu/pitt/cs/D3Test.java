@@ -55,7 +55,7 @@ public class D3Test {
       String attribute = element.getAttribute("href");
       vars.put("reset", attribute);
     }
-    assertEquals(vars.get("reset").toString(), "http://localhost:8080");
+    assertEquals(vars.get("reset").toString(), "http://localhost:8080/reset");
   }
   @Test
   public void tEST3CATALOG() {
@@ -66,7 +66,7 @@ public class D3Test {
       String attribute = element.getAttribute("src");
       vars.put("catImage", attribute);
     }
-    assertEquals(vars.get("catImage").toString(), "http://localhost:8080");
+    assertEquals(vars.get("catImage").toString(), "http://localhost:8080/images/cat2.jpg");
   }
   @Test
   public void tEST5RENTACAT() {
@@ -109,7 +109,7 @@ public class D3Test {
   }
   @Test
   public void tEST11GREETACATWITHNAME() {
-    driver.get("http://localhost:8080");
+    driver.get("http://localhost:8080/greet-a-cat/Jennyanydots");
     assertThat(driver.findElement(By.xpath("//*[text()=\'Meow! from Jennyanydots.\']")).getText(), is("Meow! from Jennyanydots."));
   }
   @Test
